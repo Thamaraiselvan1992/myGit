@@ -1,0 +1,60 @@
+<!--Modal box-->
+
+
+<section id="contact" class="section-padding">
+    <br><br>
+    <div class="container">
+      <div class="modal-dialog modal-sm">
+        <div class="text-center">
+          <h2>log In</h2>
+          <hr class="bottom-line">
+  
+          <p class="register-box-msg">login to start your session</p>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+          <div class="form-group has-feedback">
+            <!----- username -------------->
+            <input type="text" class="form-control" placeholder="User ID" formControlName="email" autocomplete="off"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+            <!---Alredy exists  ! -->
+          </div>
+          <div class="form-group has-feedback">
+            <!----- password -------------->
+            <input type="password" class="form-control" placeholder="Password" formControlName="password" autocomplete="off"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Number is required</div>
+            </div>
+            <!---Alredy exists  ! -->
+  
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="checkbox icheck">
+                <label>
+                  <input type="checkbox" id="registerrem"> Remember Me
+                </label>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <button type="submit" class="btn btn-green btn-block btn-flat">LogIn</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <h5 class="modal-title text-center form-title">New user<a routerLink="/signup">
+                &nbsp;Sign Up</a></h5>
+          </div>
+  
+        </form>
+  
+      </div>
+    </div>
+  
+  </section>
+  <!--/ Modal box-->

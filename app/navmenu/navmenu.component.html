@@ -1,0 +1,3 @@
+<ul class="nav navbar-nav navbar-right">
+    <li *ngFor="let menuItem of menu" [routerLinkActive]="['active']" ><a routerLink="{{menuItem.link}}" >{{menuItem.title}}</a></li>
+</ul>

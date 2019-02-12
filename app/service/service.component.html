@@ -1,0 +1,24 @@
+<section id="feature" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="header-section text-center">
+                    <h2>{{service.heading}}</h2>
+                    <p>{{service.headingpara}}</p>
+                    <hr class="bottom-line">
+                </div>
+                <div class="feature-info" *ngFor="let feature of service.feature">
+                    <div class="fea">
+                        <div class="col-md-4">
+                            <div class="heading pull-right">
+                                <h4>{{feature.title}}</h4>
+                                <p>{{feature.describe}}</p>
+                            </div>
+                            <div class="fea-img pull-left">
+                                <i class="{{feature.icon}}"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
